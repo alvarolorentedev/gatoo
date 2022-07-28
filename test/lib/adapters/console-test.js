@@ -1,11 +1,11 @@
 global.console = {log: jest.fn()}
 
-const faker = require('faker')
+const { faker } = require('faker')
     adapter = require('../../../lib/adapters/console')
 
 describe('console adapter', () => {
     it('exports console.log',async () => {
-        let output = {data : {somestuff: faker.random.uuid()}}
+        let output = {data : {somestuff: faker.datatype.uuid()}}
         adapter(output)
         expect(console.log).toBeCalledWith(JSON.stringify(output.data))
     })

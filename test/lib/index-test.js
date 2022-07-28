@@ -3,7 +3,7 @@ jest.mock('../../lib/exporter', () => jest.fn())
 jest.mock('../../lib/exporter', () => jest.fn())
 
 const index = require('../../lib/index'),
-    faker = require('faker')
+    { faker } = require('faker')
     importer = require('../../lib/importer'),
     exporter = require('../../lib/exporter'),
     consoleAdapter = require('../../lib/adapters/console')
@@ -17,8 +17,8 @@ describe('index', () => {
     })
     it('exports outputs to console',async () => {
         const email = faker.internet.email(),
-        path = `/some/file/path/${faker.random.uuid()}.conf`,
-        config = { config: faker.random.uuid() }
+        path = `/some/file/path/${faker.datatype.uuid()}.conf`,
+        config = { config: faker.datatype.uuid() }
 
         index.outputTo.console(email, path, config)
         

@@ -15,18 +15,18 @@ jest.mock('googleapis', () => {
 })
 
 const helper = require('../../../lib/helpers/google-analytics'),
-    faker = require('faker'),
+    { faker } = require('faker'),
     gapi = require('googleapis')
 
 describe('google authorization', () => {
     it('login to google api returns token', async () => {
-        let token = faker.random.uuid()
+        let token = faker.datatype.uuid()
         jwtMock = {
             authorize: (callback) => {callback(undefined, token)}
         }
         gapi.google.auth.JWT.mockImplementation(() => {return jwtMock } )
         let email = faker.internet.email(),
-            path = `/some/file/path/${faker.random.uuid()}.conf`
+            path = `/some/file/path/${faker.datatype.uuid()}.conf`
             scope = ['https://www.googleapis.com/auth/analytics.readonly']
         
         let result = await helper.login(email, path)
@@ -36,7 +36,7 @@ describe('google authorization', () => {
     })
     
     it('login to google api fails', async () => {
-        let error = faker.random.uuid()
+        let error = faker.datatype.uuid()
         jwtMock = {
             authorize: (callback) => {callback(error, undefined)}
         }
@@ -48,16 +48,16 @@ describe('google authorization', () => {
 
 describe('analytics', () => {
     let configuration = { 
-            jwtClient: faker.random.uuid(),
-            viewId: faker.random.uuid(), 
-            metrics: faker.random.uuid(), 
-            dimensions: faker.random.uuid(),
+            jwtClient: faker.datatype.uuid(),
+            viewId: faker.datatype.uuid(), 
+            metrics: faker.datatype.uuid(), 
+            dimensions: faker.datatype.uuid(),
             daterange: {
                 startDate: '2018-03-17',
                 endDate: '2018-03-24'
             }
         },
-        jwtClient = { client: faker.random.uuid() },
+        jwtClient = { client: faker.datatype.uuid() },
         expectSetup = {
             version: 'v4',
             auth: jwtClient
@@ -69,7 +69,7 @@ describe('analytics', () => {
     })
     
     it('calls report api with correct configuration', async () => {
-        let expectedResult = faker.random.uuid()
+        let expectedResult = faker.datatype.uuid()
         let expectedRequest = 
         {
             resource:{
