@@ -7,7 +7,7 @@ jest.mock('../../lib/helpers/google-analytics', () => {
 
 const importer = require('../../lib/importer'),
     analytics = require('../../lib/helpers/google-analytics'),
-    { faker } = require('faker')
+    { faker } = require('@faker-js/faker')
 
 describe('import', () => {
     it('import from google analytics',async () => {

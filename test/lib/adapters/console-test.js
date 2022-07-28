@@ -1,6 +1,6 @@
 global.console = {log: jest.fn()}
 
-const { faker } = require('faker')
+const { faker } = require('@faker-js/faker')
     adapter = require('../../../lib/adapters/console')
 
 describe('console adapter', () => {

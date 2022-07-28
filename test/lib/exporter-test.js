@@ -2,7 +2,7 @@ jest.mock('../../lib/importer', () => jest.fn())
 
 const importer = require('../../lib/importer'),
     exporter = require('../../lib/exporter'),
-    { faker } = require('faker')
+    { faker } = require('@faker-js/faker')
 
 describe('exporter', () => {
     it('exports google analytics data adapter',async () => {

@@ -15,7 +15,7 @@ jest.mock('googleapis', () => {
 })
 
 const helper = require('../../../lib/helpers/google-analytics'),
-    { faker } = require('faker'),
+    { faker } = require('@faker-js/faker'),
     gapi = require('googleapis')
 
 describe('google authorization', () => {

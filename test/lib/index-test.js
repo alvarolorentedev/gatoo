@@ -3,7 +3,7 @@ jest.mock('../../lib/exporter', () => jest.fn())
 jest.mock('../../lib/exporter', () => jest.fn())
 
 const index = require('../../lib/index'),
-    { faker } = require('faker')
+    { faker } = require('@faker-js/faker')
     importer = require('../../lib/importer'),
     exporter = require('../../lib/exporter'),
     consoleAdapter = require('../../lib/adapters/console')
