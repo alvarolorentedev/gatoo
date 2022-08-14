@@ -36,7 +36,7 @@
     "testEnvironment": "node"
   },
   "devDependencies": {
-    "@faker-js/faker": "^7.3.0",
+    "@faker-js/faker": "^7.4.0",
     "codecov": "3.8.3",
     "coffee": "5.4.0",
     "jest": "28.1.3"
