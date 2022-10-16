@@ -36,10 +36,10 @@
     "testEnvironment": "node"
   },
   "devDependencies": {
-    "@faker-js/faker": "^7.5.0",
+    "@faker-js/faker": "^7.6.0",
     "codecov": "3.8.3",
     "coffee": "5.4.0",
-    "jest": "29.1.2"
+    "jest": "29.2.0"
   },
   "dependencies": {
     "commander": "9.4.1",
