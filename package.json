@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "commander": "10.0.0",
-    "googleapis": "112.0.0",
+    "googleapis": "113.0.0",
     "moment": "2.29.4"
   }
 }
